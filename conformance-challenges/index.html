@@ -11,14 +11,22 @@
     </head>
     <body>
         <section id="abstract">
+		
+		<div class ="ednote"> 
+			<p>Publication as a First Public Working Draft does not imply endorsement by the W3C Membership. This is a draft document 
+			and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p>
+			<p>	This intent of this First Public Working Draft by the Accessibility Guidelines Working Group is to explore how to improve the testability and page-based conformance 
+			verification of the WCAG accessibility guidelines in order to incorporated improvements into a future version of the guidelines.
+			This draft is published to obtain public review of the issues identified and solutions proposed. </p>
+		</div>
+		
 		<p>This document explores how the page-based conformance verification of the WCAG 2.0 and 2.1 accessibility guidelines are challenging to apply to certain websites and web applications.
-		 It also explores approaches for
-         mitigating these challenges, which could be incorporated into a future version of the guidelines.</p>
+		 It also explores approaches for mitigating these challenges, which could be incorporated into a future version of the guidelines.</p>
          
 		<p>The challenges covered broadly fall into four main areas:</p>
             <ol>
 		    <li>Numerous provisions need human involvement to test and verify conformance, which is especially challenging to scale for <a>large websites</a> and for <a>dynamic websites</a>;</li>
-			    <li>Large and dynamic sites may have too many changing permutations to validate in the traditional manner;</li>
+			    <li>Large and dynamic sites may have too many changing permutations to easily validate in the traditional manner;</li>
 			<li>Third parties frequently add and change content on large and dynamic sites;</li>
                 <li>Applying a web-based, and page-based conformance model can be challenging to do for non-web Information and Communications Technologies (ICT).</li>
             </ol>
@@ -45,10 +53,10 @@ their accessibility fitness criteria.  To aid in this assessment, the
 (W3C)</a> developed the <a href="https://www.w3.org/TR/WCAG21/">Web Content
 Accessibility Guidelines (WCAG</a>), containing
 both a rich set of success criteria to meet the needs of people with
-disabilities, as well as conformance requirements for same.  Assessing the
-conformance of a website to all of the success criteria is how accessibility
-assessments are traditionally accomplished, either through assessing every 
-page, or through a page sampling approach.
+disabilities, as well as conformance requirements for same.  Third-party testers traditionally assess the
+conformance of a website to all of the success criteria by assessing every 
+page or through a page sampling approach. Accessibility conformance testing during the design and development process may 
+adapt this approach based on the phase and component being assessed. 
 </p>
 
 		    <p>
@@ -69,10 +77,10 @@ millions or billions of pages) can fully satisfy each and every success criterio
 extremely low.
 		    </p>
 
-		    <p>Assessing conformance of such sites to the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> [[wcag20]] or <a href="https://www.w3.org/TR/WCAG21/">2.1</a> [[wcag21]] has proved difficult. The <a href="https://www.w3.org/TR/WCAG20/#conformance">Web Content Accessibility Guidelines 2.0 include a set of normative requirements</a> <q>in order for a web page to conform to WCAG 2.0,</q> including that conformance <q>is for full Web page(s) only, and cannot be achieved if part of a Web page is excluded,</q> along with a Note that states <q>If a page cannot conform (for example, a conformance test page or an example page), it cannot be included in the scope of conformance or in a conformance claim.</q> The conformance requirements also state what is allowed in any optional <q>Conformance Claims,</q> starting with: <q>Conformance is defined only for  <a href="https://www.w3.org/TR/WCAG20/#webpagedef">Web pages</a>. However, a conformance claim may be made to cover one page, a series of pages, or multiple related Web pages.</q>  For the purposes of this document, we use the term <q>WCAG 2.x conformance model</q> to refer to the normative text in the <a href="https://www.w3.org/TR/WCAG20/#conformance">Conformance section</a> of WCAG 2.0 and WCAG 2.1.
+		    <p>Assessing conformance of such large, highly complex, dynamic sites to the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> [[wcag20]] or <a href="https://www.w3.org/TR/WCAG21/">2.1</a> [[wcag21]] has proved difficult. The <a href="https://www.w3.org/TR/WCAG20/#conformance">Web Content Accessibility Guidelines 2.0 include a set of normative requirements</a> <q>in order for a web page to conform to WCAG 2.0,</q> including that conformance <q>is for full Web page(s) only, and cannot be achieved if part of a Web page is excluded,</q> along with a Note that states <q>If a page cannot conform (for example, a conformance test page or an example page), it cannot be included in the scope of conformance or in a conformance claim.</q> The conformance requirements also state what is allowed in any optional <q>Conformance Claims,</q> starting with: <q>Conformance is defined only for  <a href="https://www.w3.org/TR/WCAG20/#webpagedef">Web pages</a>. However, a conformance claim may be made to cover one page, a series of pages, or multiple related Web pages.</q>  For the purposes of this document, we use the term <q>WCAG 2.x conformance model</q> to refer to the normative text in the <a href="https://www.w3.org/TR/WCAG20/#conformance">Conformance section</a> of WCAG 2.0 and WCAG 2.1.
 		    </p>
 
-<p>This WCAG 2.x conformance model contains a mitigation related to partial conformance for 3rd party content (see <a href="Challenge-3.1">Sec. 3.1: Treatment of 3rd party content and Statements of Partial Conformance</a> below). Further in recognition of these challenges, the W3C Note <a href="http://www.w3.org/tr/wcag-em/">Website Accessibility Conformance Evaluation Methodology (WCAG-EM) 1.0</a> [[wcag-em]] was published in 2014 to provide <q>guidance on evaluating how well websites conform to the Web Content Accessibility Guidelines.</q> This W3C document <q>describes a procedure to evaluate websites and includes considerations to guide evaluators and to promote good practice,</q> which can help organizations to make a conformance claim, while acknowledging that there may be errors on pages not in the sample set or that were not picked up by automated evaluation tools on pages that were not in the human evaluation sample. While WCAG-EM provides a practical method for claiming conformance for a website, it doesn't address the challenges in making every last aspect of every page conform 100% to every success criterion.
+<p>This WCAG 2.x conformance model contains a mitigation related to partial conformance for 3rd party content (see <a href="Challenge-3.1">Sec. 3.1: Treatment of 3rd party content and Statements of Partial Conformance</a> below). Further in recognition of these challenges, the W3C Note <a href="http://www.w3.org/tr/wcag-em/">Website Accessibility Conformance Evaluation Methodology (WCAG-EM) 1.0</a> [[wcag-em]] was published in 2014 to provide <q>guidance on evaluating how well websites conform to the Web Content Accessibility Guidelines.</q> This W3C document <q>describes a procedure to evaluate websites and includes considerations to guide evaluators and to promote good practice,</q> which can help organizations to make a conformance claim, while acknowledging that there may be errors on pages not in the sample set or that were not picked up by automated evaluation tools on pages that were not in the human evaluation sample. While WCAG-EM provides a practical method for claiming conformance for a website, it doesn't fully address the challenges in making every part of every page in a large, dynamic website conform 100% to every success criterion.
 </p>
 
 <p>
@@ -116,7 +124,7 @@ are both informative and valuable.  It does not, however, speak to scaling
 tests that require human involvement, or the challenges of third-party
 content, or solve the problem of programmatically generated web pages.  While 
 they are all substantial contributions to the field of web accessibility,
-neither WCAG-EM, nor ATAG, nor ACT, as they stand today are able to fully address the many challenges described in this document.
+neither WCAG-EM, nor ATAG, nor ACT, as they stand today are able to fully address the challenges described in this document.
 	    </p> 
 	    <p>Separately, the phrase <q>substantially conforms to WCAG</q> is a way of conveying that a website is broadly accessible, but not 100% perfect. Unfortunately, that phrase has no W3C definition today and there is no mechanism to set a level for a site to meet that would qualify as substantial conformance.
 	    </p>
@@ -138,7 +146,7 @@ mitigating those challenges.  Each of the main challenges sections below
 describes one or more significant mitigation approaches.
 </p>
 
-<p>While some approaches may be more applicable to a particular website design than others; and not all approaches may be appropriate or practical for a particular website, it is likely that many websites can utilize at least some of these approaches.  Website authors are encouraged to utilize as many of these approaches as possible to minimize these challenges, and maximize the likelihood that all website visitors will be able to use the site effectively.  Though the challenges described in this document illustrate that it is very difficult for large, complex, and/or dynamic websites to meet the pass/fail method of WCAG 2.x conformance, mitigation strategies might enable a substantial level of conformance that enables people with disabilities to effectively utilize websites with little difficulty.
+<p>While some approaches may be more applicable to a particular website design than others; and not all approaches may be appropriate or practical for a particular website, it is likely that many websites can utilize at least some of these approaches.  Website authors are encouraged to utilize as many of these approaches as possible to minimize these challenges, and maximize the likelihood that all website visitors will be able to use the site effectively.  Though the challenges described in this document illustrate that it is difficult for large, complex, and/or dynamic websites to meet the pass/fail method of WCAG 2.x conformance, mitigation strategies can create a substantial level of conformance that enables people with disabilities to effectively utilize websites with little difficulty.
 </p>
 
 	    </section>
@@ -210,7 +218,7 @@ particular piece of text is to be made boldface [so that <code><b></b></code> is
         </section>
 	<section id="Challenge-2">
             <h2>Challenge #2: Large, complex, and dynamic websites may have too many changing permutations to validate effectively</h2>
-            <p>Large websites often have complex content publishing pipelines, which may render content dynamically depending upon a large number of variables (such as what is known about the logged in user and her content preferences, the geographical location that the user is visiting the site from, and the capabilities of the web rendering agent being used). It may not be possible to validate every possible publishing permutation with a page-level test, each of which can have an impact on whether that particular rendering of the content at that particular moment conforms.</p>
+            <p>Large websites often have complex content publishing pipelines, which may render content dynamically depending upon a large number of variables (such as what is known about the logged in user and her content preferences, the geographical location that the user is visiting the site from, and the capabilities of the web rendering agent being used). It is difficult to validate every possible publishing permutation with a page-level test, each of which can have an impact on whether that particular rendering of the content at that particular moment conforms.</p>
 <p class="mitigation">Approaches used in quality assurance and quality engineering of software code
 can be used with software that generates dynamic web content.  One of these is
 Unit Testing (or Component Testing), where each individual step in the content
@@ -227,7 +235,7 @@ system is bug-free.
 	<section id="Challenge-3">
             <h2>Challenge #3: 3rd party content</h2>
             <p>Very large, highly dynamic web sites generally aggregate content provided by multiple entities. Many of these are third parties with the ability to add content directly to the website — including potentially every website visitor. The relationship to the 3rd party can be that of a user, a customer, or a professional provider of content such as an advertiser. While the website can provide guidance on how to post content so that it meets accessibility guidance, it is ultimately up to those third parties to understand and correctly implement that guidance. Constraints on page templates and editing facilities can greatly help minimize accessibility issues but, even with automated checks prior to accepting the post, some Success Criteria require human assessment.</p>
-            <p>Copyright and similar constraints that restrict the ability to modify or impose requirements on third party data can also make full page conformance impossible to assure, e.g. articles that allow reposting but without modification due to copyright restrictions.</p>
+            <p>Copyright and similar constraints that restrict the ability to modify or impose requirements on third party data can also make full page conformance difficult for the site provider or a third party evaluator to assure, e.g. articles that allow reposting but without modification due to copyright restrictions.</p>
 	    <section id="Challenge-3.1">
 <h3>Treatment of 3rd party content and Statements of Partial Conformance</h3>
 <p>WCAG 2.x speaks to 3rd party content and conformance, in the context of a 
