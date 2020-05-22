@@ -21,7 +21,7 @@
 		</div>
 		
 		<p>This document explores how the page-based conformance verification of the WCAG 2.0 and 2.1 accessibility guidelines are challenging to apply to certain websites and web applications.
-		 This document also explores approaches for mitigating these challenges, which could be incorporated into a future version of the guidelines.</p>
+            This document also explores some ideas for mitigating these challenges, as input into the development of a future version of the guidelines.</p>
          
 		<p>The challenges covered broadly fall into four main areas:</p>
             <ol>
@@ -72,7 +72,7 @@ adapt this approach based on the phase and component being assessed.
 There are valid reasons WCAG 2 and related resources have the conformance
 model they do; failures to conform to the current model are likely to present a barrier for people with disabilities. 
 The issues raised in this document do not mean sites should
-not strive to conform to WCAG 2. It is also vital to consider aspects beyond the conformance model that lead to accessibility issues found during late stage testing, such as the lack of accessibility prioritization, training, and integration throughout the design, development, and maintenance processes. A new version of accessibility guidelines, W3C Accessibility Guidelines 3.0 (see <a href="w3c.github.io/silver/guidelines">WCAG 3.0 Draft),</a> rethinks all aspects of the accessibility guidance and is expressly chartered to develop a new conformance model that should help to address these challenges. 
+not strive to conform to WCAG 2. It is also vital to consider aspects beyond the conformance model that lead to accessibility issues found during late stage testing, such as the lack of accessibility prioritization, training, and integration throughout the design, development, and maintenance processes. A new version of accessibility guidelines, W3C Accessibility Guidelines 3.0 (WCAG 3.0), rethinks all aspects of the accessibility guidance and is expressly chartered to develop a new conformance model that should help to address these challenges. 
 	    </p>
 		    <p>
 Large websites are often highly complex, with substantial dynamic content,
@@ -95,11 +95,11 @@ extremely low.
 		    <p>Assessing conformance of such large, highly complex, dynamic sites to the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> [[wcag20]] or <a href="https://www.w3.org/TR/WCAG21/">2.1</a> [[wcag21]] has proved difficult. The <a href="https://www.w3.org/TR/WCAG20/#conformance">Web Content Accessibility Guidelines 2.0 include a set of normative requirements</a> <q>in order for a web page to conform to WCAG 2.0,</q> including that conformance <q>is for full Web page(s) only, and cannot be achieved if part of a Web page is excluded,</q> along with a Note that states <q>If a page cannot conform (for example, a conformance test page or an example page), it cannot be included in the scope of conformance or in a conformance claim.</q> The conformance requirements also state what is allowed in any optional <q>Conformance Claims,</q> starting with: <q>Conformance is defined only for  <a href="https://www.w3.org/TR/WCAG20/#webpagedef">Web pages</a>. However, a conformance claim may be made to cover one page, a series of pages, or multiple related Web pages.</q>  For the purposes of this document, we use the term <q>WCAG 2.x conformance model</q> to refer to the normative text in the <a href="https://www.w3.org/TR/WCAG20/#conformance">Conformance section</a> of WCAG 2.0 and WCAG 2.1.
 		    </p>
 
-<p>This WCAG 2.x conformance model contains a mitigation related to partial conformance for 3rd party content (see <a href="Challenge-3.1">Sec. 3.1: Treatment of 3rd party content and Statements of Partial Conformance</a> below). Further in recognition of these challenges, the W3C Note <a href="http://www.w3.org/tr/wcag-em/">Website Accessibility Conformance Evaluation Methodology (WCAG-EM) 1.0</a> [[wcag-em]] was published in 2014 to provide <q>guidance on evaluating how well websites conform to the Web Content Accessibility Guidelines.</q> This W3C document <q>describes a procedure to evaluate websites and includes considerations to guide evaluators and to promote good practice,</q> which can help organizations to make a conformance claim, while acknowledging that there may be errors on pages not in the sample set or that were not picked up by automated evaluation tools on pages that were not in the human evaluation sample. While WCAG-EM provides a practical method for claiming conformance for a website, it doesn't fully address the challenges in making every part of every page in a large, dynamic website conform fully to every success criterion.
+<p>This WCAG 2.x conformance model contains a mitigation related to partial conformance for 3rd party content (see <a href="Challenge-3.1">Sec. 3.1: Treatment of 3rd party content and Statements of Partial Conformance</a> below). Further in recognition of these challenges, the W3C Note <a href="http://www.w3.org/tr/wcag-em/">Website Accessibility Conformance Evaluation Methodology (WCAG-EM) 1.0</a> [[wcag-em]] was published in 2014 to provide <q>guidance on evaluating how well websites conform to the Web Content Accessibility Guidelines.</q> This W3C document <q>describes a procedure to evaluate websites and includes considerations to guide evaluators and to promote good practice,</q> which can help organizations to make a conformance claim, while acknowledging that there may be errors on pages not in the sample set or that were not picked up by automated evaluation tools on pages that were not in the human evaluation sample. While WCAG-EM provides a practical method for claiming conformance for a website, it doesn't fully address the challenges in making every part of every page in a large, dynamic website conform to every success criterion.
 </p>
 
 <p>
-Also, the <a href="http://www.w3.org/tr/atag/">Authoring Tool Accessibility Guidelines 2.0 (ATAG)</a> [[atag20]] <q>provides guidelines for designing web content authoring tools that are both more accessible to authors with disabilities</q> as well as <q>is designed to enable, support, and promote the production of more accessible web content by all authors.</q> Leveraging authoring tools can significantly help with preventing accessibility issues from occurring on a website. A number of the challenges with conformance could be addressed with authoring tools, and in future versions of this document we hope to describe those in more detail. 
+Also, the <a href="http://www.w3.org/tr/atag/">Authoring Tool Accessibility Guidelines 2.0 (ATAG)</a> [[atag20]] <q>provides guidelines for designing web content authoring tools that are both more accessible to authors with disabilities</q> as well as <q>is designed to enable, support, and promote the production of more accessible web content by all authors.</q> Leveraging ATAG-conformant authoring tools can significantly help with preventing accessibility issues from occurring on a website. A number of the challenges with conformance could be addressed with authoring tools, and in future versions of this document we hope to describe those in more detail. 
 </p>
 
 <p>
@@ -115,8 +115,7 @@ explored are qualities such as the severity of an accessibility barrier and the
 time it takes for a site visitor to conduct a task, as alternative
 measures that could compliment conformance-based metrics.  Unfortunately, this research report
 	was last updated in May 2014, and has not progressed to being a
-	published W3C Note.  The Research and Development Working Group was
-	disbanded in 2015.
+	published W3C Note.  The Research and Development Working Group was not renewed by W3C Membership in 2015, though a Research Questions Task Force, under the Accessible Platform Architecture (APA) Working Group, is able to look at similar types of issues.
 </p>
 
 <p>Finally, the <a
@@ -140,8 +139,7 @@ they are all substantial contributions to the field of web accessibility,
 WCAG-EM, ATAG, and ACT task forces actively address different types of challenges,
 and do not fully address the challenges described in this document.
 	    </p> 
-	    <p>Separately, the phrase <q>substantially conforms to WCAG</q> is a way of conveying that a website is broadly accessible,
-		even if the site does not fully conform to every WCAG success criteria. Unfortunately, that phrase has no W3C definition today
+	    <p>Separately, the phrase <q>substantially conforms to WCAG</q> is a way of conveying that a website is broadly accessible, but that not every page conforms to every requirement. Unfortunately, that phrase has no W3C definition today
 		and there is no definition or mechanism that sets a level for a site to meet that would qualify as substantial conformance.
 	    </p>
 	</section> 
@@ -155,7 +153,7 @@ mitigating those challenges.  Each of the main challenges sections below
 describes one or more significant mitigation approaches.
 </p>
 
-<p>While some approaches may be more applicable to a particular website design than others; and not all approaches may be appropriate or practical for a particular website, it is likely that many websites can utilize at least some of these approaches.  Website authors are encouraged to utilize as many of these approaches as possible to minimize these challenges, and maximize the likelihood that all website visitors will be able to use the site effectively.  Though the challenges described in this document illustrate that it is difficult for large, complex, and/or dynamic websites to meet the pass/fail method of WCAG 2.x conformance across the whole website, mitigation strategies can create a substantial level of conformance that enables people with disabilities to effectively utilize websites with little difficulty.
+<p>While some approaches may be more applicable to a particular website design than others; and not all approaches may be appropriate or practical for a particular website, it is likely that many websites can utilize at least some of these approaches.  Website authors are encouraged to utilize as many of these approaches as possible to minimize these challenges, and maximize the likelihood that all website visitors will be able to use the site effectively.  Though the challenges described in this document illustrate that it is difficult for large, complex, and/or dynamic websites to meet the pass/fail method of WCAG 2.x conformance across the whole website, mitigation strategies may be able to create a substantial level of conformance that enables people with disabilities to effectively utilize websites with little difficulty.
 </p>
 
 	    </section>
@@ -180,13 +178,14 @@ describes one or more significant mitigation approaches.
        <p>One of the reasons for publishing this draft document is to seek additional contributions from the wider web community:</p>
         <ul>
             <li>Any additional challenges, or further illustration of challenges in the existing identified areas below;</li>
-            <li>Contributions to the mitigation approaches;</li>
+            <li>Contributions to the mitigation approaches, and questions or concerns about the mitigation approaches;</li>
         </ul>
-       <p>We seek to gain a thorough understanding of the challenges faced by large, complex, and dynamic websites who are attempting to provide accessible services to their web site users. It is expected that a more thorough understanding of these challenges can lead to either a new conformance model, or an alternative model that is more appropriate for large, complex, and/or dynamic websites (in WCAG 3.0). Ideally, such a model would also be able to distinguish between websites that have made a reasonable effort and are substantially accessible for visitors with disabilities, and websites that are largely unusable by a significant portion of visitors with a disability.</p>
-        <p>This document also includes previously published research from the Silver Task Force and Community Group that was specifically related to Challenges with Accessibility Guidelines Conformance and Testing. There is some
+       <p>We seek to gain a thorough understanding of the challenges faced by large, complex, and dynamic websites who are attempting to provide accessible services to their web site users. It is expected that a more thorough understanding of these challenges can lead to either a new conformance model, or an alternative model that is more appropriate for large, complex, and/or dynamic websites (in WCAG 3.0).</p>
+
+        <p>This document also includes previously published research from the Silver Task Force and Community Group, showing the aspects related to Challenges with Accessibility Guidelines Conformance and Testing. There is some
 	    overlap between the challenges captured in this published research, and the challenges enumerated in the first 4 sections of this document. The research findings will be folded into the other sections as appropriate in
 	    future versions of this document.</p>
-	    <p>Present in this current draft of this document is an initial discussion of approaches to mitigate the impact of the challenges cited. Previous drafts emphasized collecting a comprehensive inventory of challenges, we believe our collection is now sufficiently mature to begin enumerating and considering the various mitigating approaches that have been suggested by various stakeholders. We are publishing this document now to seek the widest possible public comment and assistance in further cataloging and characterizing both these challenges and these mitigation approaches, so that this work can become widely reviewed input into the next major revision of W3C accessibility guidelines (now <a href="https://www.w3.org/2019/12/ag-charter.html">chartered by W3C for eventual release as WCAG 3.0</a> and currently in early development under the name <q>Silver</q>).
+	    <p>Present in this current draft of this document is an initial discussion of approaches to mitigate the impact of the challenges cited. Previous drafts emphasized collecting a comprehensive inventory of challenges, we believe our collection is now sufficiently mature to begin enumerating and considering the various mitigating approaches that have been suggested by various stakeholders. We are publishing this document now to seek wide review to further catalogue and characterize the challenges and mitigation approaches, so that this work can become input into the next major revision of W3C accessibility guidelines (now <a href="https://www.w3.org/2019/12/ag-charter.html">chartered by W3C for eventual release as WCAG 3.0</a>).
 	    </p>
 	    </section>
 	</section>
