@@ -77,7 +77,7 @@ page, or through a page sampling approach.
 There are valid reasons WCAG 2 and related resources have the conformance
 model they do; failures to conform to the current model are likely to present a barrier for people with disabilities. 
 The issues raised in this document do not mean sites should
-not strive to conform to WCAG 2. It is also vital to consider aspects beyond the conformance model that lead to accessibility issues found during late stage testing, such as the lack of accessibility prioritization, training, and integration throughout the design, development, and maintenance processes. A new version of accessibility guidelines, W3C Accessibility Guidelines 3.0 (WCAG 3.0), rethinks all aspects of the accessibility guidance and is expressly chartered to develop a new conformance model that should help to address these challenges. 
+not strive to conform to WCAG 2. It is also vital to consider aspects beyond the conformance model that lead to accessibility issues found during late stage testing, such as the lack of accessibility prioritization, training, and integration throughout the design, development, and maintenance processes. A new version of accessibility guidelines, W3C Accessibility Guidelines 3.0 (WCAG 3.0), rethinks all aspects of the accessibility guidance and is expressly chartered to develop a new conformance model that will help to address these challenges. 
 	    </p>
 		    <p>
 Large websites are often highly complex, with substantial dynamic content,
@@ -91,8 +91,7 @@ review is required for some criteria presents a problem for scaling conformance 
 Further, where pages are generated programmatically, finding every bug
 related to that generation may prove challenging, especially when they only
 arise from uncommon content scenarios or combinations (and updates to those
-algorithms and code happen multiple times per week). It is incumbent on websites - especially for large, complex, dynamic websites - to do everything they can to conform.  However, to date, no 
-large, complex software has been bug free, and it is equally difficult for such sites to claim conformance with no accessibility defects on any page.
+algorithms and code happen multiple times per week). It is incumbent on websites - especially for large, complex, dynamic websites - to do everything they can to conform. However, to date, no large, complex software has been bug free.  Similarly, authors of large, dynamic, and complex sites have struggled to claim conformance with no accessibility defects on any page.
 		    </p>
 
 		    <p>Assessing conformance of such large, highly complex, dynamic sites to the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> [[wcag20]] or <a href="https://www.w3.org/TR/WCAG21/">2.1</a> [[wcag21]] has proved difficult. The <a href="https://www.w3.org/TR/WCAG20/#conformance">Web Content Accessibility Guidelines 2.0 include a set of normative requirements</a> <q>in order for a web page to conform to WCAG 2.0,</q> including that conformance <q>is for full Web page(s) only, and cannot be achieved if part of a Web page is excluded,</q> along with a Note that states <q>If a page cannot conform (for example, a conformance test page or an example page), it cannot be included in the scope of conformance or in a conformance claim.</q> The conformance requirements also state what is allowed in any optional <q>Conformance Claims,</q> starting with: <q>Conformance is defined only for  <a href="https://www.w3.org/TR/WCAG20/#webpagedef">Web pages</a>. However, a conformance claim may be made to cover one page, a series of pages, or multiple related Web pages.</q>  For the purposes of this document, we use the term <q>WCAG 2.x conformance model</q> to refer to the normative text in the <a href="https://www.w3.org/TR/WCAG20/#conformance">Conformance section</a> of WCAG 2.0 and WCAG 2.1.
@@ -116,7 +115,7 @@ accessibility need to consider to communicate accessibility in a simple form
 such as a number.  One particularly interesting thing this research report
 explored are qualities such as the severity of an accessibility barrier and the
 time it takes for a site visitor to conduct a task, as alternative
-measures that could compliment conformance-based metrics.  Unfortunately, this research report
+measures that could complement conformance-based metrics.  Unfortunately, this research report
 	was last updated in May 2014, and has not progressed to being a
 	published W3C Note.  The Research and Development Working Group was not renewed by W3C Membership in 2015, though a Research Questions Task Force, under the Accessible Platform Architecture (APA) Working Group, is able to look at similar types of issues.
 </p>
@@ -219,10 +218,10 @@ mitigation strategies may be able to create a website that people with disabilit
 challenges.  For example, if pages can be built using a small number of page
 templates that are fully vetted for conformance to criteria relating to
 structure, heading use, and layout, then pages generated with those templates
-are much more likely to have well defined headings and structure.  Further, if
-pages are limited to rendering images that come from a fully vetted library of
-images that have well defined ALT text, then issues with poor ALT text can be
-minimized if not entirely eliminated.  Another approach that can be used in
+are much more likely to have well defined headings and structure.  Further, if pages are 
+limited to rendering images that come from a fully vetted library of images that have well 
+defined ALT text, and these images are always used in similar contexts (i.e., a store inventory)
+ then issues with poor ALT text can be minimized if not entirely eliminated.  Another approach that can be used in
 some situations is to encode website content in a higher-level abstraction
 from HTML (e.g. a wiki-based website, when content authors can specify that a
 particular piece of text is to be emphasized strongly [which would be rendered
@@ -233,7 +232,7 @@ particular piece of text is to be made boldface [so that <code><b></b></code> is
         </section>
 	<section id="Challenge-2">
             <h2>Challenge #2: Large, complex, and dynamic websites may have too many changing permutations to validate effectively</h2>
-            <p>Large websites often have complex content publishing pipelines, which may render content dynamically depending upon a large number of variables (such as what is known about the logged in user and her content preferences, the geographical location that the user is visiting the site from, and the capabilities of the web rendering agent being used). It is difficult to validate every possible publishing permutation with a page-level test, each of which can have an impact on whether that particular rendering of the content at that particular moment conforms.</p>
+            <p>Large websites often have complex content publishing pipelines, which may render content dynamically depending upon a large number of variables (such as what is known about the logged in user and her content preferences, the geographical location that the user is visiting the site from, and the capabilities of the web rendering agent being used). It is difficult, and may not be feasible, to validate every possible publishing permutation with a page-level test, each of which can have an impact on whether that particular rendering of the content at that particular moment conforms.</p>
 <p class="mitigation">Approaches used in quality assurance and quality engineering of software code
 can be used with software that generates dynamic web content.  One of these is
 Unit Testing (or Component Testing), where each individual step in the content
@@ -250,7 +249,7 @@ system is bug-free.
 	<section id="Challenge-3">
             <h2>Challenge #3: 3rd party content</h2>
             <p>Very large, highly dynamic web sites generally aggregate content provided by multiple entities. Many of these are third parties with the ability to add content directly to the website — including potentially every website visitor. The relationship to the 3rd party can be that of a user, a customer, or a professional provider of content such as an advertiser. While the website can provide guidance on how to post content so that it meets accessibility guidance, it is ultimately up to those third parties to understand and correctly implement that guidance. Constraints on page templates and editing facilities can greatly help minimize accessibility issues but, even with automated checks prior to accepting the post, some Success Criteria require human assessment.</p>
-            <p>Copyright, commercial agreements, and similar constraints that restrict the ability to modify or impose requirements on third party data can also make conformance difficult to assure.</p>
+            <p>Copyright, commercial agreements, and similar constraints that restrict the ability to modify or impose requirements on third party content can also make full conformance claims infeasible.</p>
 	    <section id="Challenge-3.1">
 <h3>Treatment of 3rd party content and Statements of Partial Conformance</h3>
 <p>WCAG 2.x speaks to 3rd party content and conformance, in the context of a 
@@ -403,7 +402,7 @@ and software.
                     <p><strong>Result of problem</strong>: Among the results are: difficulty understanding what qualifies as a content technology or an assistive technology; difficulty quantifying assistive technologies or features of user agents; claiming conformance with inadequate assistive technology; and difficulty claiming conformance.</p>
                     <p><strong>Situation and Priority</strong>: Any claim or assertion that a web page conforms to the guidelines may require an explicit statement defining which assistive technology and user agent(s) the contained technologies rely upon, and presumably inclusive of specific versions and or release dates of each. One could infer then that a conformance claim is dependent upon a software compatibility claim naming browsers and assistive technology and their respective versions. This would create a burden to author and govern such claims. Additionally, no one can predict and anticipate new technologies and their rates of adoption by people with disabilities.</p>
 		    <p><strong>Opportunity</strong>: As the technologies in this equation evolve, the interoperability may be affected by any number of factors outside of the control of the author and publisher of a web page. Either <q>accessibility supported</q> should not be a
-		    component of conformance requirements, or it should clearly, concisely and explicitly define and quantify the technologies or classes of technologies, AND set any resulting update or expiry criteria for governance.</p>
+		    component of conformance requirements, or it should clearly, concisely, and explicitly define and quantify the technologies or classes of technologies, AND set any resulting update or expiry criteria for governance.</p>
                 </section>
                 <section>
                     <h4>Evolving Technology</h4>
